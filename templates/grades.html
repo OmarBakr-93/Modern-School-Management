@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Grades</h1>
+<a href="#" class="btn btn-primary">Add New Grade</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Class</th>
+        <th>Grade</th>
+    </tr>
+    {% for grade in grades %}
+    <tr>
+        <td>{{ grade.id }}</td>
+        <td>{{ grade.student.first_name }} {{ grade.student.last_name }}</td>
+        <td>{{ grade.class_model.class_name }}</td>
+        <td>{{ grade.grade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

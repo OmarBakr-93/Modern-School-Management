@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern School</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'school:dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'school:students' %}">Students</a></li>
+            <li><a href="{% url 'school:classes' %}">Classes</a></li>
+            <li><a href="{% url 'school:grades' %}">Grades</a></li>
+            <li><a href="{% url 'school:attendance' %}">Attendance</a></li>
+            {% comment %} <li><a href="{% url 'logout' %}">Logout</a></li> {% endcomment %}
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

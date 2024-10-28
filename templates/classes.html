@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Classes</h1>
+<a href="#" class="btn btn-primary">Add New Class</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Class Name</th>
+        <th>Teacher</th>
+    </tr>
+    {% for class in classes %}
+    <tr>
+        <td>{{ class.id }}</td>
+        <td>{{ class.class_name }}</td>
+        <td>{{ class.teacher }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
